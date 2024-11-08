@@ -17,7 +17,7 @@
         const response: Response = await fetch(Tutorials);
         if (response.ok) {
           const data: Item[] = await response.json();
-          items = data;
+          items = data.sort((a, b) => a.id - b.id);
         } else {
           console.error("Failed to fetch items");
         }
@@ -42,16 +42,23 @@
         {#each items as item (item.id)}
           <li class="item">
             <button on:click={() => selectItem(item)} class="item-button">
-              {item.title}
+              {item.id}. {item.title}
             </button>
+            - {item.difficulty}
           </li>
         {/each}
       </ul>
     {:else}
+
+
+    <!-- detail page -->
       <div class="details">
         <button on:click={goBack} class="back-button">Go Back</button>
-        <h3>{selectedItem.title}</h3>
-        <p>{selectedItem.description}</p>
+        <div class="details description">
+
+          <h3>{selectedItem.title}</h3>
+          <p>{selectedItem.description}</p>
+        </div>
       </div>
     {/if}
   </main>
@@ -65,8 +72,11 @@
   
     .item-list {
       display: grid;
-      grid-template-columns: 1fr;
+      
+      grid-template-columns: repeat(2, 1fr);
       gap: 8px;
+      /* grid-auto-flow: column; */
+
     }
   
     /* Two-column layout for medium and larger screens */
@@ -84,15 +94,19 @@
     }
   
     .item-button {
-      width: 100%;
+      width: 80%;
       padding: 12px;
       /* background-color: #007bff; */
       color: #fff;
       border: none;
       border-radius: 8px;
-      font-size: 16px;
+      font-size: 20px;
       cursor: pointer;
       transition: background-color 0.3s;
+      font-family: "Blippo", fantasy;
+      font-weight: 800;
+
+
     }
   
     .item-button:hover {
@@ -100,8 +114,19 @@
     }
   
     .details {
-      text-align: center;
+      /* text-align: center; */
       padding: 20px;
+      margin-top: 18px;
+    }
+
+    .details .description {
+      font-size: 18px;
+      font-weight: 800;
+      font-family: "Blippo", fantasy;
+    }
+
+    .description h3{
+      align-items: center;
     }
   
     .back-button {
