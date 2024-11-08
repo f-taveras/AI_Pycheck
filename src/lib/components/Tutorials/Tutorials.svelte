@@ -1,12 +1,16 @@
 <script>
 import { onMount } from "svelte";
 
+// import env from "env";
+
+const Tutorials_api = import.meta.env.VITE_TUTORIAL_API;
+
 let items = [];
 let selectedItem = null;
 
 onMount(async () => {
     try{
-        const response = await fetch("http://localhost:8000/tutorials/")
+        const response = await fetch(Tutorials_api)
         if (response.ok){
             items = await response.json();
             } else {

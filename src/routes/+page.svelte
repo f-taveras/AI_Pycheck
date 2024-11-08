@@ -1,26 +1,24 @@
 <script>
-    let pythonCode = '';
-    
-    function handleSubmit() {
-      // Temporary action to log code; we’ll hook this up to the OpenAI API later
-      console.log("Python Code:", pythonCode);
-    }
+import Tutorials from '$lib/components/Tutorials/Tutorials.svelte';    
+import NavBar from '$lib/components/NavBar/NavBar.svelte';    
   </script>
   
   <main>
-    <h1>Not the one</h1>
-    <textarea bind:value={pythonCode} rows="10" cols="50" placeholder="Enter Python code here"></textarea>
-    <button on:click={handleSubmit}>Run Code</button>
-    <prompt-list />
+    <NavBar />
+   <Tutorials />
   </main>
   
   <style>
     main {
-      display: flex;
+      /* display: flex; */
+      color: white;
       flex-direction: column;
       align-items: center;
       gap: 1rem;
+      background-color: #1c1c22;
+      height: 100vh;
     }
+
     textarea {
       width: 100%;
       max-width: 600px;
