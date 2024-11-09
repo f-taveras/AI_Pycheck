@@ -1,26 +1,54 @@
 <script lang="ts">
     export let item;
     export let goBack: () => void;
-  </script>
-  
-  <div class="details">
+    import AceEditor from "ace-builds";
+    import "ace-builds/src-noconflict/mode-python";
+    import "ace-builds/src-noconflict/theme-monokai";
+    import ace from "ace-builds";
+    import { onMount } from "svelte";
+
+
+    let editor: HTMLElement;
+    let code = item?.code || "# Write your Python code here";
+
+    onMount(() => {
+    const aceEditor = ace.edit(editor);
+    aceEditor.setTheme("ace/theme/monokai");
+    aceEditor.session.setMode("ace/mode/python");
+    aceEditor.setValue(code);
+    aceEditor.session.on("change", () => {
+      code = aceEditor.getValue();
+    });
+  });
+
+
+
+
+</script>
+
+<div class="details">
     <button on:click={goBack} class="back-button">Go Back</button>
     <div class="description">
-      <h3>{item.title}</h3>
-      <p>{item.description}</p>
+        <h3>{item.title}</h3>
+        <p>{item.description}</p>
     </div>
-  </div>
-  
-  <style>
+    <div class="editor">
+
+        <div id="editor" bind:this={editor}></div>
+    </div>
+</div>
+
+
+<style>
     .details {
-      padding: 20px;
-      margin-top: 18px;
+        padding: 20px;
+        margin-top: 18px;
     }
-  
+
     .description {
-      font-size: 18px;
-      font-weight: 800;
-      font-family: "Blippo", fantasy;
+        font-size: 18px;
+        font-weight: 800;
+        font-family: "Blippo", fantasy;
     }
     .description h3 {
         margin: 10px;
@@ -28,27 +56,40 @@
         font-weight: bolder;
         font-size: 3em;
         text-align: center;
-    }   
+    }
     .description p {
         margin: 10px;
         /* margin-bottom: 10px; */
         font-weight: bolder;
         text-align: left;
-    }   
-  
+    }
+
     .back-button {
-      padding: 10px 20px;
-      background-color: #0056b3;
-      color: #fff;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      margin-bottom: 20px;
-      transition: background-color 0.3s;
+        padding: 10px 20px;
+        background-color: #0056b3;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        margin-bottom: 20px;
+        transition: background-color 0.3s;
     }
-  
+
     .back-button:hover {
-      background-color: #5a6268;
+        background-color: #5a6268;
     }
-  </style>
-  
+
+    .editor{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #editor {
+    font-size: x-large;
+    align-self: center;
+    width: 80%;
+    height: 400px;
+    border: 1px solid #ccc;
+  }
+</style>
