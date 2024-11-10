@@ -1,5 +1,5 @@
 <script>
-  import Tutorials from "$lib/components/Tutorials/Tutorials.svelte";
+  import Tutorials from "./Tutorials/Tutorials.svelte";
   import NavBar from "$lib/components/NavBar/NavBar.svelte";
 </script>
 
