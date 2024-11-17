@@ -1,43 +1,57 @@
 <script lang="ts">
     export let item;
-    export let goBack: () => void;
-    import AceEditor from "ace-builds";
+    import { goto } from "$app/navigation";
+    import ace from "ace-builds";
     import "ace-builds/src-noconflict/mode-python";
     import "ace-builds/src-noconflict/theme-monokai";
-    import ace from "ace-builds";
-    import { onMount } from "svelte";
+    import { onDestroy, onMount } from "svelte";
 
+    export let data;
+
+    const tutorial = data?.tutorial;
+
+
+    function goBack() {
+        goto("/tutorials");
+    }
+
+
+    if (!tutorial) {
+        throw new Error("Tutorial data not found");
+    }
 
     let editor: HTMLElement;
     let code = item?.code || "# Write your Python code here";
 
     onMount(() => {
-    const aceEditor = ace.edit(editor);
-    aceEditor.setTheme("ace/theme/monokai");
-    aceEditor.session.setMode("ace/mode/python");
-    aceEditor.setValue(code);
-    aceEditor.session.on("change", () => {
-      code = aceEditor.getValue();
+        const aceEditor = ace.edit(editor);
+        aceEditor.setTheme("ace/theme/monokai");
+        aceEditor.session.setMode("ace/mode/python");
+        aceEditor.setValue(code);
+        aceEditor.session.on("change", () => {
+            code = aceEditor.getValue();
+        });
+
+        // onDestroy(() => {
+        //     if (aceEditor) {
+        //         aceEditor.destroy();
+        //         aceEditor.container.remove();
+        //     }
+        // });
     });
-  });
-
-
-
-
 </script>
 
 <div class="details">
-    <button on:click={goBack} class="back-button">Go Back</button>
+    
+    <button  class="back-button"><a href="/" class="back-button">Go Back</a></button>
     <div class="description">
-        <h3>{item.title}</h3>
-        <p>{item.description}</p>
+        <h3>{tutorial.title}</h3>
+        <p>{tutorial.description}</p>
     </div>
     <div class="editor">
-
         <div id="editor" bind:this={editor}></div>
     </div>
 </div>
-
 
 <style>
     .details {
@@ -79,17 +93,17 @@
         background-color: #5a6268;
     }
 
-    .editor{
+    .editor {
         display: flex;
         justify-content: center;
         align-items: center;
     }
 
     #editor {
-    font-size: x-large;
-    align-self: center;
-    width: 80%;
-    height: 400px;
-    border: 1px solid #ccc;
-  }
+        font-size: x-large;
+        align-self: center;
+        width: 80%;
+        height: 400px;
+        border: 1px solid #ccc;
+    }
 </style>

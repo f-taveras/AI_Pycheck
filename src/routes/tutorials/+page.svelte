@@ -18,7 +18,7 @@
   <ul class="item-list">
     {#each items as item (item.id)}
       <li class="item">
-        <a href={`/Tutorials/${item.id}/`} class="item-link">
+        <a href={`/tutorials/${item.id}/`} class="item-link">
           {item.number}. {item.title} - {item.difficulty}
         </a>
       </li>
