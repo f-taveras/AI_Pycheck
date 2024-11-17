@@ -17,10 +17,12 @@
 <main class="container">
   <ul class="item-list">
     {#each items as item (item.id)}
-      <li class="item">
-        <a href={`/tutorials/${item.id}/`} class="item-link">
-          {item.number}. {item.title} - {item.difficulty}
-        </a>
+      <li class="item-link">
+        <div class="division">
+          {item.number}.
+          <a href={`/tutorials/${item.id}/`} class="">{item.title}</a>
+        </div>
+        {item.difficulty}
       </li>
     {/each}
   </ul>
@@ -34,22 +36,26 @@
   }
 
   .item-list {
-    list-style: none;
-    padding: 0;
-  }
-
-  .item {
-    margin-bottom: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
   }
 
   .item-link {
-    text-decoration: none;
-    color: #007bff;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 12px;
+    color: #fff;
+    border-radius: 8px;
     font-size: 20px;
-    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: "Blippo", fantasy;
+    font-weight: 800;
   }
 
   .item-link:hover {
-    color: #0056b3;
+    background-color: #0056b3;
   }
 </style>

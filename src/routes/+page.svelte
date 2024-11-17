@@ -10,7 +10,6 @@
 
 <style>
   main {
-    /* display: flex; */
     color: white;
     flex-direction: column;
     align-items: center;

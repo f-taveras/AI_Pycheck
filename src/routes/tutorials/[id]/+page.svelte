@@ -10,12 +10,6 @@
 
     const tutorial = data?.tutorial;
 
-
-    function goBack() {
-        goto("/tutorials");
-    }
-
-
     if (!tutorial) {
         throw new Error("Tutorial data not found");
     }
@@ -38,7 +32,12 @@
         //         aceEditor.container.remove();
         //     }
         // });
+        
+        
     });
+    function handleCodeSumit() {
+        console.log('code:',code);
+    }
 </script>
 
 <div class="details">
@@ -50,6 +49,7 @@
     </div>
     <div class="editor">
         <div id="editor" bind:this={editor}></div>
+        <button on:click={handleCodeSumit}>Submit</button>
     </div>
 </div>
 
