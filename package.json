@@ -30,6 +30,7 @@
 	},
 	"dependencies": {
 		"ace-builds": "^1.36.5",
+		"openai": "^4.72.0",
 		"typography": "^0.16.24"
 	}
 }

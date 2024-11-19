@@ -1,4 +1,5 @@
 <script lang="ts">
+    
     export let item;
     import { goto } from "$app/navigation";
     import ace from "ace-builds";
@@ -37,6 +38,19 @@
     });
     function handleCodeSumit() {
         console.log('code:',code);
+    }
+
+
+    async function WorkCheckAI(){
+        const response = await fetch ('http://192.168.1.159:11434/api/generate',{
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                code: code
+            })
+        })
     }
 </script>
 
