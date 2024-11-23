@@ -1,11 +1,11 @@
 <script lang="ts">
     
-    export let item;
-    import { goto } from "$app/navigation";
     import ace from "ace-builds";
     import "ace-builds/src-noconflict/mode-python";
     import "ace-builds/src-noconflict/theme-monokai";
     import { onDestroy, onMount } from "svelte";
+    
+    export let item;
 
     export let data;
 
@@ -15,9 +15,35 @@
         throw new Error("Tutorial data not found");
     }
 
-    let editor: HTMLElement;
-    let code = item?.code || "# Write your Python code here";
+    let editor: HTMLTextAreaElement | null = null;
+    
 
+    let code = item?.code || "# Write your Python code here";
+    
+    onMount(() => {
+        editor = document.getElementById("editor") as HTMLTextAreaElement;
+
+        if (editor) {
+            const aceEditor = ace.edit(editor, {
+                mode: "ace/mode/python",
+                theme: "ace/theme/monokai"
+            });
+            if (item.code) {
+                aceEditor.setValue(item.code);
+            }
+            
+            aceEditor.on('change', () => {
+                item.code = aceEditor.getValue();
+            });
+        }
+    });
+
+    onDestroy(() => {
+        editor?.removeEventListener('change', aceEditor.onChange)
+    })
+    
+    
+    
     onMount(() => {
         const aceEditor = ace.edit(editor);
         aceEditor.setTheme("ace/theme/monokai");
@@ -28,16 +54,16 @@
         });
 
         // onDestroy(() => {
-        //     if (aceEditor) {
-        //         aceEditor.destroy();
-        //         aceEditor.container.remove();
-        //     }
-        // });
+            if (aceEditor) {
+                aceEditor.destroy();
+                aceEditor.container.remove();
+            }
+        });
         
         
     });
     function handleCodeSumit() {
-        console.log('code:',code);
+        console.log(`code: ${item.code}`);
     }
 
 
@@ -48,11 +74,12 @@
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                code: code
+                code: item.code
             })
         })
     }
 </script>
+{console.log("item:",item)}
 
 <div class="details">
     
@@ -62,7 +89,7 @@
         <p>{tutorial.description}</p>
     </div>
     <div class="editor">
-        <div id="editor" bind:this={editor}></div>
+        <textarea id="editor" bind:value={item.code}></textarea>
         <button on:click={handleCodeSumit}>Submit</button>
     </div>
 </div>
