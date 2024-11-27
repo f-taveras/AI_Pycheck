@@ -39,33 +39,72 @@
         console.log('code:',code);
     }
 </script>
+<main>
 
-<div class="details">
-    
     <button  class="back-button"><a href="/" class="back-button">Go Back</a></button>
-    <div class="description">
-        <h3>{tutorial.title}</h3>
-        <p>{tutorial.description}</p>
+    <div class="details">
+        
+        <div class="description">
+            <h3>{tutorial.title}</h3>
+            <p>{tutorial.description}</p>
+        </div>
+        <div class="editor">
+            <div id="editor" bind:this={editor}></div>
+            <button on:click={handleCodeSumit}>Submit</button>
+        </div>
     </div>
-    <div class="editor">
-        <div id="editor" bind:this={editor}></div>
-        <button on:click={handleCodeSumit}>Submit</button>
-    </div>
-</div>
-
+    
+</main>
 <style>
+
     .details {
         padding: 20px;
-        margin-top: 18px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    button {
+        
+        padding: 10px 20px;
+        background-color: #0056b3;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        margin-bottom: 20px;
+        transition: background-color 0.3s;
+        margin-top: 8px;
+
+    }
+    button:hover{
+        background-color: blue;
+    }
+    .back-button {
+        margin: 20px;
+        
+    }
+
+    .back-button:hover {
+        background-color: #5a6268;
+    }
+    main {
+        background-color: #1c1c22;
+        height: 100vh;
+        color: white;
     }
 
     .description {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        /* margin: 3rem; */
         font-size: 18px;
         font-weight: 800;
         font-family: "Blippo", fantasy;
     }
     .description h3 {
-        margin: 10px;
+        
         /* margin-bottom: 10px; */
         font-weight: bolder;
         font-size: 3em;
@@ -76,33 +115,20 @@
         /* margin-bottom: 10px; */
         font-weight: bolder;
         text-align: left;
+        margin: 3em;
     }
 
-    .back-button {
-        padding: 10px 20px;
-        background-color: #0056b3;
-        color: #fff;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-        margin-bottom: 20px;
-        transition: background-color 0.3s;
-    }
 
-    .back-button:hover {
-        background-color: #5a6268;
-    }
-
-    .editor {
+    /* .editor {
         display: flex;
         justify-content: center;
         align-items: center;
-    }
+    } */
 
     #editor {
         font-size: x-large;
-        align-self: center;
-        width: 80%;
+        /* align-self: center; */
+        width: 100rem;
         height: 400px;
         border: 1px solid #ccc;
     }

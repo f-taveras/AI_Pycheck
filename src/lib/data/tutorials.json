@@ -2,17 +2,17 @@
     {
         "id": 1,
         "number": "1",
-        "title": "Test tuto",
-        "description": "this is a test tuto and I didn't copy anything to paste here so....this is a test tuto and I didn't copy anything to paste here so....this is a test tuto and I didn't copy anything to paste here so....this is a test tuto and I didn't copy anything to paste here so....this is a test tuto and I didn't copy anything to paste here so....this is a test tuto and I didn't copy anything to paste here so....this is a test tuto and I didn't copy anything to paste here so....this is a test tuto and I didn't copy anything to paste here so....",
+        "title": "Character Input",
+        "description": "Create a program that asks the user to enter their name and their age. Print out a message addressed to them that tells them the year that they will turn 100 years old. Note: for this exercise, the expectation is that you explicitly write out the year (and therefore be out of date the next year). If you want to do this in a generic way, see exercise 39",
         "solution": "coming soon",
-        "difficulty": "Very Hard",
+        "difficulty": "easy",
         "stack": "Python"
     },
     {
         "id": 2,
         "number": "2",
-        "title": "another one",
-        "description": "this is a test tuto and I didn't copy anything to paste here so....this is a test tuto and I didn't copy anything to paste here so....this is a test tuto and I didn't copy anything to paste here so....this is a test tuto and I didn't copy anything to paste here so....this is a test tuto and I didn't copy anything to paste here so....this is a test tuto and I didn't copy anything to paste here so....this is a test tuto and I didn't copy anything to paste here so....this is a test tuto and I didn't copy anything to paste here so....",
+        "title": "Odd Or Even",
+        "description": "The exercise comes first (with a few extras if you want the extra challenge or want to spend more time), followed by a discussion. Enjoy! \n\n\nAsk the user for a number. Depending on whether the number is even or odd, print out an appropriate message to the user. Hint: how does an even / odd number react differently when divided by 2?",
         "solution": "coming soon",
         "difficulty": "not as hard",
         "stack": "Python"
@@ -20,64 +20,343 @@
     {
         "id": 3,
         "number": "3",
-        "title": "another 2",
-        "description": "this is a test tuto and I didn't copy anything to paste here so....this is a test tuto and I didn't copy anything to paste here so....this is a test tuto and I didn't copy anything to paste here so....this is a test tuto and I didn't copy anything to paste here so....this is a test tuto and I didn't copy anything to paste here so....this is a test tuto and I didn't copy anything to paste here so....this is a test tuto and I didn't copy anything to paste here so....this is a test tuto and I didn't copy anything to paste here so....",
+        "title": "List Less Than Ten",
+        "description": "Take a list, say for example this one: a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89] and write a program that prints out all the elements of the list that are less than 5.",
         "solution": "comming soon",
-        "difficulty": "easy",
+        "difficulty": "Medium",
         "stack": "pyhon"
     },
     {
         "id": 4,
         "number": "4",
-        "title": "another 3",
-        "description": "this is a test tuto and I didn't copy anything to paste here so....this is a test tuto and I didn't copy anything to paste here so....this is a test tuto and I didn't copy anything to paste here so....this is a test tuto and I didn't copy anything to paste here so....this is a test tuto and I didn't copy anything to paste here so....this is a test tuto and I didn't copy anything to paste here so....this is a test tuto and I didn't copy anything to paste here so....this is a test tuto and I didn't copy anything to paste here so....",
+        "title": "Divisors",
+        "description": "Create a program that asks the user for a number and then prints out a list of all the divisors of that number. (If you don’t know what a divisor is, it is a number that divides evenly into another number. For example, 13 is a divisor of 26 because 26 / 13 has no remainder.)",
         "solution": "comming soon",
-        "difficulty": "easy",
+        "difficulty": "Medium",
         "stack": "pyhon"
     },
     {
         "id": 5,
         "number": "5",
-        "title": "another 4",
-        "description": "this is a test tuto and I didn't copy anything to paste here so....this is a test tuto and I didn't copy anything to paste here so....this is a test tuto and I didn't copy anything to paste here so....this is a test tuto and I didn't copy anything to paste here so....this is a test tuto and I didn't copy anything to paste here so....this is a test tuto and I didn't copy anything to paste here so....this is a test tuto and I didn't copy anything to paste here so....this is a test tuto and I didn't copy anything to paste here so....",
+        "title": "List Overlap",
+        "description": "",
         "solution": "comming soon",
-        "difficulty": "easy",
+        "difficulty": "Medium",
         "stack": "pyhon"
     },
     {
         "id": 6,
         "number": "6",
-        "title": "another 5",
-        "description": "this is a test tuto and I didn't copy anything to paste here so....this is a test tuto and I didn't copy anything to paste here so....this is a test tuto and I didn't copy anything to paste here so....this is a test tuto and I didn't copy anything to paste here so....this is a test tuto and I didn't copy anything to paste here so....this is a test tuto and I didn't copy anything to paste here so....this is a test tuto and I didn't copy anything to paste here so....this is a test tuto and I didn't copy anything to paste here so....",
+        "title": "String Lists",
+        "description": "",
         "solution": "comming soon",
-        "difficulty": "easy",
+        "difficulty": "Medium",
         "stack": "pyhon"
     },
     {
         "id": 7,
         "number": "7",
-        "title": "another 6",
-        "description": "this is a test tuto and I didn't copy anything to paste here so....this is a test tuto and I didn't copy anything to paste here so....this is a test tuto and I didn't copy anything to paste here so....this is a test tuto and I didn't copy anything to paste here so....this is a test tuto and I didn't copy anything to paste here so....this is a test tuto and I didn't copy anything to paste here so....this is a test tuto and I didn't copy anything to paste here so....this is a test tuto and I didn't copy anything to paste here so....",
+        "title": "List Comprehension",
+        "description": "",
         "solution": "comming soon",
-        "difficulty": "easy",
+        "difficulty": "Medium",
         "stack": "pyhon"
     },
     {
         "id": 8,
         "number": "8",
-        "title": "break",
-        "description": "this is a test tuto and I didn't copy anything to paste here so....this is a test tuto and I didn't copy anything to paste here so....this is a test tuto and I didn't copy anything to paste here so....this is a test tuto and I didn't copy anything to paste here so....this is a test tuto and I didn't copy anything to paste here so....this is a test tuto and I didn't copy anything to paste here so....this is a test tuto and I didn't copy anything to paste here so....this is a test tuto and I didn't copy anything to paste here so....",
+        "title": "Rock Paper Scissors",
+        "description": "",
         "solution": "comming soon",
-        "difficulty": "easy",
+        "difficulty": "Hard",
         "stack": "pyhon"
     },
     {
         "id": 9,
         "number": "9",
-        "title": "enough",
-        "description": "this is a test tuto and I didn't copy anything to paste here so....this is a test tuto and I didn't copy anything to paste here so....this is a test tuto and I didn't copy anything to paste here so....this is a test tuto and I didn't copy anything to paste here so....this is a test tuto and I didn't copy anything to paste here so....this is a test tuto and I didn't copy anything to paste here so....this is a test tuto and I didn't copy anything to paste here so....this is a test tuto and I didn't copy anything to paste here so....",
+        "title": "Guessing Game One",
+        "description": "",
+        "solution": "comming soon",
+        "difficulty": "Hard",
+        "stack": "pyhon"
+    },
+    {
+        "id": 10,
+        "number": "10",
+        "title": "List Overlap Comprehensions",
+        "description": "",
+        "solution": "comming soon",
+        "difficulty": "Medium",
+        "stack": "pyhon"
+    },
+    {
+        "id": 11,
+        "number": "11",
+        "title": "Check Primality Functions",
+        "description": "",
+        "solution": "comming soon",
+        "difficulty": "Hard",
+        "stack": "pyhon"
+    },
+    {
+        "id": 12,
+        "number": "12",
+        "title": "List Ends",
+        "description": "",
         "solution": "comming soon",
         "difficulty": "easy",
+        "stack": "pyhon"
+    },
+    {
+        "id": 13,
+        "number": "13",
+        "title": "Fibonacci",
+        "description": "",
+        "solution": "comming soon",
+        "difficulty": "Medium",
+        "stack": "pyhon"
+    },
+    {
+        "id": 14,
+        "number": "14",
+        "title": "List Remove Duplicates",
+        "description": "",
+        "solution": "comming soon",
+        "difficulty": "Medium",
+        "stack": "pyhon"
+    },
+    {
+        "id": 15,
+        "number": "15",
+        "title": "Reverse Word Order",
+        "description": "",
+        "solution": "comming soon",
+        "difficulty": "Hard",
+        "stack": "pyhon"
+    },
+    {
+        "id": 16,
+        "number": "16",
+        "title": "Password Generator",
+        "description": "",
+        "solution": "comming soon",
+        "difficulty": "Very Hard",
+        "stack": "pyhon"
+    },
+    {
+        "id": 17,
+        "number": "17",
+        "title": "Decode A Web Page",
+        "description": "",
+        "solution": "comming soon",
+        "difficulty": "Very Hard",
+        "stack": "pyhon"
+    },
+    {
+        "id": 18,
+        "number": "18",
+        "title": "Cows And Bulls",
+        "description": "",
+        "solution": "comming soon",
+        "difficulty": "Hard",
+        "stack": "pyhon"
+    },
+    {
+        "id": 19,
+        "number": "19",
+        "title": "Decode A Web Page Two",
+        "description": "",
+        "solution": "comming soon",
+        "difficulty": "Very Hard",
+        "stack": "pyhon"
+    },
+    {
+        "id": 20,
+        "number": "20",
+        "title": "Element Search",
+        "description": "",
+        "solution": "comming soon",
+        "difficulty": "easy",
+        "stack": "pyhon"
+    },
+    {
+        "id": 21,
+        "number": "21",
+        "title": "Write To A File",
+        "description": "",
+        "solution": "comming soon",
+        "difficulty": "easy",
+        "stack": "pyhon"
+    },
+    {
+        "id": 22,
+        "number": "22",
+        "title": "Read From File",
+        "description": "",
+        "solution": "comming soon",
+        "difficulty": "easy",
+        "stack": "pyhon"
+    },
+    {
+        "id": 23,
+        "number": "23",
+        "title": "File Overlap",
+        "description": "",
+        "solution": "comming soon",
+        "difficulty": "Medium",
+        "stack": "pyhon"
+    },
+    {
+        "id": 24,
+        "number": "24",
+        "title": "Draw A Game Board",
+        "description": "",
+        "solution": "comming soon",
+        "difficulty": "Medium",
+        "stack": "pyhon"
+    },
+    {
+        "id": 25,
+        "number": "25",
+        "title": "Guessing Game Two",
+        "description": "",
+        "solution": "comming soon",
+        "difficulty": "Hard",
+        "stack": "pyhon"
+    },
+    {
+        "id": 26,
+        "number": "26",
+        "title": "Check Tic Tac Toe",
+        "description": "",
+        "solution": "comming soon",
+        "difficulty": "Medium",
+        "stack": "pyhon"
+    },
+    {
+        "id": 27,
+        "number": "27",
+        "title": "Tic Tac Toe Draw",
+        "description": "",
+        "solution": "comming soon",
+        "difficulty": "Medium",
+        "stack": "pyhon"
+    },
+    {
+        "id": 28,
+        "number": "28",
+        "title": "Max Of Three",
+        "description": "",
+        "solution": "comming soon",
+        "difficulty": "easy",
+        "stack": "pyhon"
+    },
+    {
+        "id": 29,
+        "number": "29",
+        "title": "Tic Tac Toe Game",
+        "description": "",
+        "solution": "comming soon",
+        "difficulty": "Hard",
+        "stack": "pyhon"
+    },
+    {
+        "id": 30,
+        "number": "30",
+        "title": "Pick Word",
+        "description": "",
+        "solution": "comming soon",
+        "difficulty": "Medium",
+        "stack": "pyhon"
+    },
+    {
+        "id": 31,
+        "number": "31",
+        "title": "Guess Letters",
+        "description": "",
+        "solution": "comming soon",
+        "difficulty": "Medium",
+        "stack": "pyhon"
+    },
+    {
+        "id": 32,
+        "number": "32",
+        "title": "Hangman",
+        "description": "",
+        "solution": "comming soon",
+        "difficulty": "Medium",
+        "stack": "pyhon"
+    },
+    {
+        "id": 33,
+        "number": "33",
+        "title": "Birthday Dictionaries",
+        "description": "",
+        "solution": "comming soon",
+        "difficulty": "easy",
+        "stack": "pyhon"
+    },
+    {
+        "id": 34,
+        "number": "34",
+        "title": "Birthday Json",
+        "description": "",
+        "solution": "comming soon",
+        "difficulty": "Medium",
+        "stack": "pyhon"
+    },
+    {
+        "id": 35,
+        "number": "35",
+        "title": "Birthday Months",
+        "description": "",
+        "solution": "comming soon",
+        "difficulty": "Medium",
+        "stack": "pyhon"
+    },
+    {
+        "id": 36,
+        "number": "36",
+        "title": "Birthday Plots",
+        "description": "",
+        "solution": "comming soon",
+        "difficulty": "Hard",
+        "stack": "pyhon"
+    },
+    {
+        "id": 37,
+        "number": "37",
+        "title": "Functions Refactor",
+        "description": "",
+        "solution": "comming soon",
+        "difficulty": "Medium",
+        "stack": "pyhon"
+    },
+    {
+        "id": 38,
+        "number": "38",
+        "title": "f Strings",
+        "description": "",
+        "solution": "comming soon",
+        "difficulty": "easy",
+        "stack": "pyhon"
+    },
+    {
+        "id": 39,
+        "number": "39",
+        "title": "Character Input Datetime",
+        "description": "",
+        "solution": "comming soon",
+        "difficulty": "easy",
+        "stack": "pyhon"
+    },
+    {
+        "id": 40,
+        "number": "40",
+        "title": "Error Checking",
+        "description": "",
+        "solution": "comming soon",
+        "difficulty": "Hard",
         "stack": "pyhon"
     }
 ]

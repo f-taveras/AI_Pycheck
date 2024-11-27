@@ -15,6 +15,7 @@
 </script>
 
 <main class="container">
+  {console.log(items)}
   <ul class="item-list">
     {#each items as item (item.id)}
       <li class="item-link">
@@ -30,6 +31,7 @@
 
 <style>
   .container {
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
@@ -39,6 +41,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 8px;
+    column-gap: 20rem 
   }
 
   .item-link {
@@ -57,5 +60,12 @@
 
   .item-link:hover {
     background-color: #0056b3;
+  }
+
+   main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%
   }
 </style>

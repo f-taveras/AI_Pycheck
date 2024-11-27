@@ -11,10 +11,10 @@
 <style>
   main {
     color: white;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
+    /* flex-direction: column; */
+    /* align-items: center; */
+    /* gap: 1rem; */
     background-color: #1c1c22;
-    height: 100vh;
+    height: 100%;
   }
 </style>
