@@ -6,18 +6,63 @@
     import "ace-builds/src-noconflict/theme-monokai";
     import { onDestroy, onMount } from "svelte";
 
-    export let data;
+// api call 
+let result: string = "";
+let loading: boolean = false;
+let error: string | null = null;
 
-    const tutorial = data?.tutorial;
 
-    if (!tutorial) {
-        throw new Error("Tutorial data not found");
+const fetchResponse = async () => {
+  loading = true;
+  error = null;
+
+  try {
+    const response = await fetch("/tutorials/api", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body:JSON.stringify({
+        model: "llama3.2",
+        prompt: 'why is the sky blue'
+    }),
+});
+if (!response.ok) {
+      throw new Error (`HTTP error! Status: ${response.status}`);
     }
+    const json = await response.json();
+    if (json.error) {
+      throw new Error(json.error);
+    }
+    result = json.response;
+} catch (err) {
+    error = `Error: ${err.message}`;
+} finally {
+    loading = false;
+  }
+};
 
-    let editor: HTMLElement;
-    let code = item?.code || "# Write your Python code here";
+onMount(fetchResponse);
 
-    onMount(() => {
+
+
+
+
+// mounting ace editor, neet to refactor to run as onMount(AceEditor)
+
+export let data;
+
+const tutorial = data?.tutorial;
+
+if (!tutorial) {
+    throw new Error("Tutorial data not found");
+}
+
+let editor: HTMLElement;
+let code = item?.code || "# Write your Python code here";
+
+onMount(() => {
+        fetchResponse;
         const aceEditor = ace.edit(editor);
         aceEditor.setTheme("ace/theme/monokai");
         aceEditor.session.setMode("ace/mode/python");
@@ -27,7 +72,7 @@
         });
 
         // onDestroy(() => {
-        //     if (aceEditor) {
+            //     if (aceEditor) {
         //         aceEditor.destroy();
         //         aceEditor.container.remove();
         //     }
@@ -41,10 +86,26 @@
 </script>
 <main>
 
-    <button  class="back-button"><a href="/" class="back-button">Go Back</a></button>
+    <button on:click={() => goto('/')} class="back-button">Go Back</button> 
     <div class="details">
         
         <div class="description">
+            <!-- // Ollama test -->
+
+            <h1>Ask Llama 3.2</h1>
+    {#if loading}
+      <p>Loading...</p>
+    {:else if error}
+      <p class="error">{error}</p>
+    {:else if result}
+      <p>Response: {result}</p>
+      {console.log(result)}
+    {:else}
+      <p>No data yet.</p>
+    {/if}
+            
+            <!-- end of ollama test  -->
+            
             <h3>{tutorial.title}</h3>
             <p>{tutorial.description}</p>
         </div>

@@ -11,9 +11,9 @@ export const POST: RequestHandler = async ({ request }) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        model: model || "llama3.2", // Default to llama3.2 if no model is specified
+        model: model || "llama3.2",
         prompt,
-        stream: false, // Ensure no-stream response AKA a simple json file
+        stream: false, // Ensure no-stream response
       }),
     });
 

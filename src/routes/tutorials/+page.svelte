@@ -1,5 +1,6 @@
 <script lang="ts">
   import tutorials from "$lib/data/tutorials.json";
+ 
 
   interface Item {
     id: number;
@@ -18,15 +19,17 @@
   {console.log(items)}
   <ul class="item-list">
     {#each items as item (item.id)}
+    <a href={`/tutorials/${item.id}/`} class="">
       <li class="item-link">
         <div class="division">
           {item.number}.
-          <a href={`/tutorials/${item.id}/`} class="">{item.title}</a>
-        </div>
-        {item.difficulty}
-      </li>
-    {/each}
-  </ul>
+          {item.title}
+          </div>
+          {item.difficulty}
+        </li>
+      </a>
+        {/each}
+      </ul>
 </main>
 
 <style>
