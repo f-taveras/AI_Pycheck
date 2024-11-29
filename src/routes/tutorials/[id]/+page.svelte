@@ -6,10 +6,11 @@
     import "ace-builds/src-noconflict/theme-monokai";
     import { onDestroy, onMount } from "svelte";
 
-// api call 
+// api Ollama 
 let result: string = "";
 let loading: boolean = false;
 let error: string | null = null;
+let description: string = "";
 
 
 const fetchResponse = async () => {
@@ -24,7 +25,7 @@ const fetchResponse = async () => {
       },
       body:JSON.stringify({
         model: "llama3.2",
-        prompt: 'why is the sky blue'
+        prompt: description,
     }),
 });
 if (!response.ok) {
@@ -42,7 +43,7 @@ if (!response.ok) {
   }
 };
 
-onMount(fetchResponse);
+// onMount(fetchResponse);
 
 
 
@@ -81,7 +82,10 @@ onMount(() => {
         
     });
     function handleCodeSumit() {
-        console.log('code:',code);
+        description = `${tutorial.description}\n${code}`;
+        console.log('description:',description);
+        fetchResponse();
+        // console.log('code:',code);
     }
 </script>
 <main>
@@ -92,13 +96,12 @@ onMount(() => {
         <div class="description">
             <!-- // Ollama test -->
 
-            <h1>Ask Llama 3.2</h1>
+            <!-- <h1>Ask Llama 3.2</h1> -->
     {#if loading}
       <p>Loading...</p>
     {:else if error}
       <p class="error">{error}</p>
     {:else if result}
-      <p>Response: {result}</p>
       {console.log(result)}
     {:else}
       <p>No data yet.</p>
